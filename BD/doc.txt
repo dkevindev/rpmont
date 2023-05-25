@@ -1,0 +1,67 @@
+ESTRUTURA BANCO DE DADOS:
+
+
+PMS:
+
+ID:
+NUMERAL:
+GRADUACAO:
+MATRÍCULA:
+NOME COMPLETO:
+OPM:
+FUNCAO:
+ENDEREÇO:
+TELEFONE: []
+SITUACAO FUNCIONAL:
+ATESTADOS: [
+    {
+        DATA:
+        DIAS:
+        MÉDICO:
+        HOSPITAL:
+        ATESTADO:
+        CID:
+    }
+],
+FERIAS: [
+    ANO:
+    PRETENCAO:
+    GOZO: {
+        DIAS:
+        BI:
+        GOZO:
+    }
+],
+JUSTICA: [
+    {
+        TIPO:
+        PUBLICACAO:
+        DATA:
+        LOCAL:
+        HORARIO:
+        OFICIO:
+        AVISO:
+    }
+]
+
+
+
+EQUIPAMENTOS:
+
+TIPO: [ ACURTA, ALONGA, EPI, ALGEMAS, MUNIÇÃO]
+NOME:
+NUMERO DE SÉRIE:
+SITUACAO: [
+    CAUTELADO {
+        DATA:
+        QTD:    
+    }, 
+    RESERVA DE ARMAMENTO, 
+    ESTOQUE.
+],
+LINK:
+
+
+
+
+

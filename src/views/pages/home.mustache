@@ -1,0 +1,34 @@
+{{>partials/header}}
+<body>
+    <div class="divbanner">
+        <img class="banner" src="images/camuflado.png">
+        <img class="logopmce" src="images/LOGO PMCE.png" >
+        <img class="logocav" src="images/LOGO RPMONT.png" >
+    </div>
+    
+    <div class="top_menu">SISTEMAS RPMONT</div>
+
+    <div class="itemsistema" onclick="login()">
+        <div class="divimg">
+            <img class="imgmenupolice" src="images/icones/police.png" alt="">
+        </div>
+        <text class="texto1">SISP4 <br></text>
+        <text class="texto2">Sistema interno de acompanhamento de viaturas e equipamentos.</text>
+    </div>
+    <div class="divlogin">
+        <div class="login">
+            <img class="bannerlogin" src="images/camuflado.png">
+            <text class="logintxt">LOGIN</text>
+            
+            
+            <form action="/login" method="post">
+                <input class="mat" type="text" placeholder="Digite sua matrícula" name='mat'>
+                <input class="senha" type="password" placeholder="Digite sua senha" name='senha'><br>
+                <button class="entrar">ENTRAR</button>
+            </form>
+            
+            
+    </div>
+    
+   
+{{>partials/footer}}

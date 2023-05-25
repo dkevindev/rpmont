@@ -1,0 +1,28 @@
+{{>partials/header2}}
+    <div class="container">
+        {{>partials/menu}}        
+        </div>
+        <div class="container-site">
+            <div class="container-site-2">
+                <div class="container-banner"></div>
+                <div class="container-banner-menu">
+                    <span class="txtmenu">{{menu.title}}</span>
+                </div>
+                <div class="container-conteudo">
+                    {{#users}}  
+                        {{>partials/policiais}}  
+                    {{/users}}
+                    {{#equips}}  
+                        {{>partials/equip}}  
+                    {{/equips}}
+                    {{#menu.edit}}  
+                        {{>partials/edit}}  
+                        {{>partials/eqps}}  
+                    {{/menu.edit}}
+                    {{#user_find}}  
+                        {{>partials/cautelas}} 
+                    {{/user_find}}
+                </div>
+            </div>
+            <div class="container-footer">
+            {{>partials/footer2}}
