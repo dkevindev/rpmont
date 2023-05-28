@@ -1,0 +1,42 @@
+<form action="/{{matricula}}/inserir" method="post">
+    <div class="div-adiconar-material">
+        <div class="txt-add-material-nv">ADICIONAR MATERIAL</div>
+        <div class="container-meio-add">
+            <div class="container-meio-infos">
+                <span class="textos-infos-add-itens">Selecionar Material</span>
+                <select class="inputs-texts-meio" type="text" name="nserie" id="">
+                    {{#armamento}}
+                        <option value="{{nserie}}"><strong>NºSerie:{{nserie}}</strong> - {{nome}}</option>
+                    {{/armamento}}
+                </select>
+            </div>
+            <div class="container-meio-infos">
+                <span class="textos-infos-add-itens" >Nº Cautela</span>
+                <input class="inputs-texts-meio" type="text" name="ncautela" id="">
+            </div>
+            <div class="container-meio-infos">
+                <span class="textos-infos-add-itens">Quantidade</span>
+                <input class="inputs-texts-meio" type="text" name="qtd" id="">
+            </div>
+            <div class="container-meio-infos">
+                <span class="textos-infos-add-itens">Data</span>
+                <input class="inputs-texts-meio" type="date" name="data" id="">
+            </div>
+        </div>
+        <div class="container-meio-infos2">
+            <div class="obs-enviar">
+                <span class="textos-infos-add-itens">Observação</span>
+                <div class="div-obs-img-adicionar">
+                    
+                        <button class="obs-button-">
+                            <img class="adicionar-link-img2" src="../images/icones/plus.png" alt="">
+                            <span class="textos-infos-add-itens">NOVO ITEM</span>
+                        </button>
+                    
+                </div>
+                
+            </div>
+            <input class="inputs-texts-meio2" type="text" name="obs" id="">
+        </div>
+    </div>
+</form>

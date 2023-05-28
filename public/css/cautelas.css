@@ -1,13 +1,13 @@
 .container-info-pms {
     border-radius: 10px;
     background-color: #414942;
-    width: 493px;
+    width: 550px;
     height: 510px;
     display: flex;
     flex-direction: column;
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.7);
     align-self: center;
-    margin-left: 35%;
+    margin: 30px;
 }
 
 .container-txt-pms {
@@ -119,6 +119,7 @@
     margin: 10px;
     margin-top: 0px;
     align-items: center;
+    justify-content: center;
 
 
 }
@@ -135,6 +136,9 @@
     font-size: 15px;
     line-height: 27px;
     color: #D9D9D9;
+    cursor: pointer;
+    justify-self: center;
+    align-self: center;
 }
 
 .img-doc-final {
@@ -146,3 +150,5 @@
     height: 44px;
     margin-left: 64px;
 }
+
+

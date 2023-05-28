@@ -3,7 +3,7 @@
                                 <img class="area-foto-2" src='{{img}}'>
                             </div>
                             <div class="area-dados">
-                                <div class="dados">{{grad}} {{qra}} <br> {{num}}<br> {{matricula}} </div>
+                                <div class="dados">{{grad}} {{qra}} <br> {{num}} {{^num}} - {{/num}}<br> {{matricula}} <br> {{funcao}} </div>
                             </div>
                             <form action="/{{matricula}}" method="get">
                                 <div class="area-botao">

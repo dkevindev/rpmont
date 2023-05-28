@@ -1,0 +1,132 @@
+.container-espaco-vtr {
+    display: flex;
+    flex-direction: column;
+    width: 216px;
+    height: 497px;
+    background: #FFFFFF;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.7);
+    margin: 30px;
+}
+
+.container-espaco-foto {
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-espaco-nome {
+    display: flex;
+    background-color: #414942;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.txt-nvtr {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    color: #FFFFFF;
+}
+
+.txt-placa {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: #FFFFFF;
+}
+
+.container-espaco-icons-status {
+    display: flex;
+    flex-direction: line;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-sirene-verde {
+    height: 41px;
+}
+
+.text-operando {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    color: #54FEBD;
+    margin-left: 7px;
+    margin-top: 4px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+}
+
+.vtr-policia {
+    height: 120px;
+}
+
+.text-mot-kmfinal {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 23px;
+    margin-left: 10px;
+}
+
+.area-btn-vtrs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-1-vtr-op, .btn-2-vtr-op, .btn-3-vtr-op {
+    width: 90%;
+    height: 28px;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.btn-1-vtr-op {
+    background: #0B9510;
+
+}
+
+.btn-2-vtr-op {
+    background: #DBFF00;
+    color: #000;
+}
+
+.btn-3-vtr-op {
+    background: #FF0000;
+}
+
+.area-semaltera {
+    display: flex;
+    flex-direction: line;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.semalteracao{
+    height: 46px;
+}

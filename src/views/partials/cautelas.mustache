@@ -7,7 +7,7 @@
             <img src="{{img}}" class="foto-pm-info">
             <div class="container-dados-pms">
                 <span><strong>Nome:</strong> {{nome}}</span>
-                <span><strong>Num:</strong> {{num}}</span>
+                <span><strong>Num:</strong> {{num}} {{^num}} - {{/num}}</span>
                 <span><strong>Matrícula:</strong> {{matricula}}</span>
                 <span><strong>Grad/Posto:</strong> {{grad}}</span>
                 <span><strong>Função:</strong> {{funcao}}</span>
@@ -23,28 +23,31 @@
            
            
             <div class="container-lista">
-                <ul>{{#cautelas}}
-                    <li>{{#.}} {{.}}
-                        <form action="/{{matricula}}" method="get"> 
-                            <img class="icones-li1" src="/images/icones/edit.png" alt="">
-                        </form>
-                        <form action="/{{matricula}}" method="get">
-                            <img class='icones-li2' src="/images/icones/remove.png" alt="">
-                        </form>
-                    {{/.}}
+                <ul>{{#armacautelada}}
+                    <li><strong>Qtd: &nbsp;</strong> {{cautela.qtd}} {{nome}} &nbsp;<strong>NºSérie:&nbsp;</strong> {{nserie}}&nbsp;<strong>Cautela nº:&nbsp;</strong> {{cautela.ncautela}}
                     </li>
-                    {{/cautelas}}
+                    {{/armacautelada}}
+                    {{^armacautelada}}
+                    <li><strong>Policial sem nenhum material cautelado.</strong>
+                    </li>
+                    {{/armacautelada}}
                 </ul>
             </div>
 
 
         </div>
         <div class="container-final">
-            <img class="img-add-final" src="/images/icones/plus.png" alt="">
-            <span class="newitem" >NOVO ITEM</span>
-            <img class="img-doc-final" src="/images/icones/docx.png" alt="">
-            <span class="newitem" >GERAR DOCUMENTO</span>
-            <img class="img-doc-final2" src="/images/icones/left-arrow.png" alt="">
-
+            <form action="/" method="get">
+                <a href="/{{matricula}}/additem">
+                    <img class="img-add-final" src="/images/icones/plus.png" alt="">
+                    <span class="newitem">ADICIONAR ITEM</span>
+                </a>
+            </form>
+            <form action="/" method="get">
+                <a href="/diversoss">
+                    <img class="img-doc-final" src="/images/icones/docx.png" alt="">
+                    <span class="newitem" >GERAR DOCUMENTO</span>
+                </a>
+            </form>
         </div>
     </div>

@@ -1,22 +1,33 @@
 import { Schema, model, Model, connection } from 'mongoose';
 
 type EquipsType = {
+    tipo: string,
     nome: string,
-    src: string,
-    num: [],
-    reserva: Number,
-    qtd: Number,
-    cauteladas: Number,
+    nserie: string,
+    situacao: string,
+    cautela: {
+        ncautela: string,
+        data: string,
+        mat: string,
+        qtd: number
+    },
+    img: string,
+    obs: string
 };
 
 const schema = new Schema<EquipsType>({
+    tipo: {type: String, required: true},
     nome: {type: String, required: true},
-    src: {type: String, required: true},
-    num: {type: [Array], required: false},
-    reserva: {type: Number, required: false},
-    qtd: {type: Number, required: true},
-    cauteladas: {type: Number, required: true},
-    
+    nserie: {type: String, required: false},
+    situacao: {type: String, required: true},
+    cautela: {
+        ncautela: {type: String, required: false},
+        data: {type: String, required: false},
+        mat: {type: String, required: false},
+        qtd: {type: Number, required: false},
+    },
+    img: {type: String, required: false},
+    obs: {type: String, required: false}
 });
 
 const modelName: string = 'Equips';

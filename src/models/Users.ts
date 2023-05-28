@@ -1,7 +1,7 @@
 import { Schema, model, Model, connection } from 'mongoose';
 
 type UserType = {
-    num: string,
+    num: number,
     grad: string,
     matricula: string,
     nome: string,
@@ -12,11 +12,12 @@ type UserType = {
     img: string,
     senha: number,
     opm: string,
-    cautelas: []
+    cautelas: [],
+    ord: number
 };
 
 const schema = new Schema<UserType>({
-    num: {type: String, required: true},
+    num: {type: Number, required: false},
     grad: {type: String, required: true},
     matricula: {type: String, required: true},
     nome: {type: String, required: true},
@@ -28,7 +29,7 @@ const schema = new Schema<UserType>({
     senha: {type: Number, required: false},
     opm: {type: String, required: false},
     cautelas: {type: [Array], required: false},
-    
+    ord: {type: Number, required: true}
 });
 
 const modelName: string = 'User';

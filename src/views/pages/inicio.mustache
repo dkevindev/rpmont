@@ -7,21 +7,51 @@
                 <div class="container-banner"></div>
                 <div class="container-banner-menu">
                     <span class="txtmenu">{{menu.title}}</span>
+                    {{#menu.title2}}
+                    <form class="buscar" action="{{menu.busca}}" method="post">
+                        <div class="buscar">
+                            <button class="text-buscar">BUSCAR</button>
+                        </div>
+                        <input class="input-buscar" type="text" placeholder="Digite o {{menu.title2}}" name="busca">
+                    </form>
+                    {{/menu.title2}}
                 </div>
                 <div class="container-conteudo">
                     {{#users}}  
                         {{>partials/policiais}}  
                     {{/users}}
-                    {{#equips}}  
+                    {{#aggregateResult}}  
                         {{>partials/equip}}  
-                    {{/equips}}
+                    {{/aggregateResult}}
                     {{#menu.edit}}  
-                        {{>partials/edit}}  
-                        {{>partials/eqps}}  
+                        {{>partials/edit2}}   
                     {{/menu.edit}}
+                    {{#menu.policiais}}  
+                        {{>partials/edit}}   
+                    {{/menu.policiais}}
+                    {{#menu.equipamentos}}  
+                        {{>partials/eqps}}  
+                    {{/menu.equipamentos}}
+                    {{#menu.diversos}}  
+                        {{>partials/options}}  
+                    {{/menu.diversos}}
                     {{#user_find}}  
                         {{>partials/cautelas}} 
                     {{/user_find}}
+                    {{#menu.additem}}  
+                        {{>partials/addcautela}}  
+                    {{/menu.additem}}
+                    {{#menu.vtrop}}  
+                        {{>partials/vtrop}}  
+                    {{/menu.vtrop}}
+                    {{#eqps_findd}}  
+                        {{>partials/equip_find}}  
+                    {{/eqps_findd}}
+                    {{#pms_findd}}  
+                        {{>partials/policiais}}  
+                    {{/pms_findd}}
+
+                    
                 </div>
             </div>
             <div class="container-footer">
