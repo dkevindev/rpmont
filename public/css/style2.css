@@ -69,8 +69,20 @@
     flex: 1;
     display: flex;
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
     border-bottom: 1px solid #B3B0B0;
+    
+}
+
+.container-conteudo-pms {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.container-conteudo-arms {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.container-conteudo-vtrs {
+    grid-template-columns: repeat(4, 1fr);
 }
 
 
@@ -182,6 +194,16 @@
     background-image: url('/images/icones/car.png');
     background-position: center;
     background-size:cover;
+}
+
+.img-vtr2 {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background-image: url('/images/icones/graph.png');
+    background-position: center;
+    background-size:cover;
+    margin-top: 13px;
 }
 
 .div-cadastrosm{
@@ -333,9 +355,9 @@
     
 }
 
-.cadastros-vtrm {
+.img-vtrm2 {
     width: 47px;
-    height: 65px;
+    height: 58px;
     margin: 5px;
     display: flex;
     justify-content:left;
@@ -345,7 +367,23 @@
     font-weight: 800;
     font-size: 18px;
     line-height: 33px;
-    margin-top: 6px;
+    
+    
+}
+
+.cadastros-vtrm {
+    width: 47px;
+    height: 55px;
+    margin: 5px;
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 33px;
+    margin-top: 12px;
     
     
 }
@@ -379,7 +417,7 @@
     margin: 20px;
     display: flex;
     flex-direction: column;
-    width: 119px;
+    width: 140px;
     height: 235px;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.8);
 
@@ -726,7 +764,7 @@
 }
 
 .btn-1-vtr-op, .btn-2-vtr-op, .btn-3-vtr-op {
-    width: 90%;
+    width: 200px;
     height: 28px;
     border: 2px solid #000000;
     border-radius: 4px;
@@ -877,3 +915,159 @@
 .textos-infos-add-itens {
     margin-top: 5px;
 }
+
+.addos-container {
+    background-color: #414942;
+    width: 600px;
+    height: auto;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.itens-containes-os2{
+    display: flex;
+    flex: line;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.itens-containes-os{
+    display: flex;
+    flex: line;
+    justify-content: space-between;
+    margin-left: 5px;
+    margin-right: 5px;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.itens-containes-os2222{
+    display: flex;
+    flex: line;
+    justify-content: space-between;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    align-items:flex-start
+}
+
+.itens-containes-os666{
+    display: flex;
+    flex: line;
+    justify-content: space-between;
+    margin-left: 5px;
+    margin-right: 5px;
+    align-items: center;
+    margin-top: 9px;
+    margin-bottom: 10PX;
+}
+
+.itens-containes-os777{
+    display: flex;
+    flex: line;
+    justify-content: space-between;
+    margin-left: 5px;
+    margin-right: 5px;
+    align-items: center;
+    margin-top: 5px;
+    padding: 0px;
+}
+
+.txt-cadastrar-os {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+    
+}
+
+.inputs-add-os {
+    width: 70.3%;
+    border-radius: 8px;
+    padding: 3px;
+    font-family: 'Open Sans';
+}
+
+.inputs-add-os2222 {
+    width: 70.3%;
+    border-radius: 8px;
+    padding: 3px;
+    font-family: 'Open Sans';
+}
+
+.div-add-os {
+    width: 70%;
+    border-radius: 8px;
+    padding: 3px;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    background-color: #D9D9D9;
+    padding-left: 10px;
+    
+}
+
+
+
+
+.inputs-add-os2 {
+    width: 71.9%;
+    border-radius: 8px;
+    padding: 3px;
+    font-family: 'Open Sans';
+}
+
+
+.txt-menu-addcontainer {
+    color: white;
+    font-size: 17px;
+    font-family: 'Open Sans';
+    font-style: normal;
+}
+
+.button-add-os-cav {
+    margin-top: 7px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: 'Open Sans';
+    font-size: 17px;
+    background-color: green;
+    color: white;
+    border-radius: 7px;
+    border-color: white;
+}
+
+.div-add-os222 {
+    width: 100%;
+    border-radius: 8px;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    background-color: #D9D9D9;
+    padding: 0px;
+    height: auto;    
+}
+
+.lista-add-os {
+    margin: 2px;
+    min-height: 300px;
+    height: auto;
+}
+
+.item-li-2 {
+    font-size: 13px;
+    font-weight: 100;
+    width: 90%;
+    margin-left: 22px;
+}
+
+.botan-listas-xxx{
+    text-align: left;
+}
+
+

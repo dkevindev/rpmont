@@ -16,7 +16,10 @@
                     </form>
                     {{/menu.title2}}
                 </div>
-                <div class="container-conteudo">
+                <div class="container-conteudo container-conteudo-pms">
+                {{#menu.pms}}<div class="container-conteudo container-conteudo-pms">{{/menu.pms}}
+                {{#menu.material}}<div class="container-conteudo container-conteudo-arms">{{/menu.material}}
+                {{#menu.vtrs}}<div class="container-conteudo container-conteudo-vtrs">{{/menu.vtrs}}
                     {{#users}}  
                         {{>partials/policiais}}  
                     {{/users}}
@@ -41,15 +44,28 @@
                     {{#menu.additem}}  
                         {{>partials/addcautela}}  
                     {{/menu.additem}}
-                    {{#menu.vtrop}}  
+                    {{#menu.vtrs2}}  
                         {{>partials/vtrop}}  
-                    {{/menu.vtrop}}
+                    {{/menu.vtrs2}}
                     {{#eqps_findd}}  
                         {{>partials/equip_find}}  
                     {{/eqps_findd}}
                     {{#pms_findd}}  
                         {{>partials/policiais}}  
                     {{/pms_findd}}
+                    {{#menu.os}}  
+                        {{>partials/os}}  
+                    {{/menu.os}}
+                    {{#osss}}  
+                        {{>partials/oss}}  
+                    {{/osss}}
+                    {{#ordem}}  
+                        {{>partials/ordem}}  
+                    {{/ordem}}
+                    {{#menu.relatorios}}  
+                        {{>partials/relatorios}}  
+                    {{/menu.relatorios}}
+
 
                     
                 </div>

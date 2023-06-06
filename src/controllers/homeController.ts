@@ -2,6 +2,9 @@ import { Request, Response } from 'express';
 import User from '../models/Users';
 import Equips from '../models/Equips';
 import options from '../models/options';
+import Vtrsinfo from '../models/Vtrsinfo';
+import Vtrs from '../models/Vtrs';
+import Os from '../models/Os';
 
 export const home = async(req: Request, res: Response)=>{
     let users = await User.find({})
@@ -91,6 +94,11 @@ export const material = async(req: Request, res: Response)=>{
 
 export const vtrs = async(req: Request, res: Response)=>{
     let users = await User.find({})
+    let vtrsinfos = await Vtrsinfo.find({})
+    let vtrs2 = await Vtrs.find({})
+
+    
+    console.log(vtrs);
     
 
 
@@ -99,7 +107,8 @@ export const vtrs = async(req: Request, res: Response)=>{
             vtrs: true,
             title: 'ACOMPANHAMENTO DE VIATURAS',
             title2: 'prefixo da VTR',
-            vtrop: true
+            vtrop: true,
+            vtrs2
         }
         
         
@@ -199,5 +208,57 @@ export const diversos = async(req: Request, res: Response)=>{
         },
         users2,
         options2
+    });
+};
+
+export const os = async(req: Request, res: Response)=>{
+    let listapms = await User.find({}).sort({ ord: 1, num: 1  })
+    let options2 = await options.find({})
+    let listavtrs = await Vtrs.find({})
+    
+    
+
+
+    res.render('pages/inicio', {
+        menu: {
+            os: true,
+            title: 'ADICIONAR ORDEM DE SERVIÇO'
+        },
+        listavtrs,
+        listapms
+
+        
+        
+        
+    });
+};
+
+export const baixar = async(req: Request, res: Response)=>{
+    const fs = require('fs');
+    const path = require('path');
+    const filePath = path.join(__dirname, '../../public', 'relatorios.csv');
+
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
+
+
+  // Define o cabeçalho do Content-Disposition para forçar o download do arquivo
+    res.setHeader('Content-disposition', 'attachment; filename=relatorios.csv');
+    res.setHeader('Content-type', 'text/csv');
+
+  // Faz a leitura do arquivo CSV e envia o conteúdo para o cliente
+    
+
+  // Faz o pipe da stream para a resposta
+    res.send(fileContent);
+                
+
+
+
+    res.render('pages/inicio', {
+       
+
+        
+        
+        
     });
 };

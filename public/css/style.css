@@ -189,3 +189,57 @@ body {
     border-top: 1px solid #B3B0B0;
 }
 
+.tabela-linhas {
+    border: 1px solid black;
+    text-align: center;
+    background-color: darkgray;
+    width: 200px;
+    font-size: 18px;
+}
+
+.tabela-linhas2 {
+    border: 1px solid black;
+    text-align: center;
+    background-color: rgb(243, 243, 243);
+    font-size: 15px;
+}
+
+.div-tabela-oss {
+    display: flex;
+    flex-direction: column;
+}
+
+.filtrar-os {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 70px;
+    align-items: center;
+    font-family: 'Open Sans';
+    font-weight: 700;
+}
+
+.container-filtros-os {
+    display: flex;
+    flex-direction: line;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+input {
+    margin-right: 10px;
+}
+
+button {
+    margin-left: 10px;
+}
+
+.link-itens-a {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 1px;
+    border-radius: 5px;
+    background: rgb(197, 194, 194, 0.2);
+}

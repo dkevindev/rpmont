@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <form action="/buscasos" method="post">
+        <div class="div-tabela-oss">
+            <div class="filtrar-os">
+                <span>FILTRAR ORDENS DE SERVIÇO / SALDO DISPONIVEL ATUALMENTE: R$ 15.000,00</span>
+                <div class="container-filtros-os">
+                    <input type="date" name="data">
+                    <input type="month" name="mes">
+                    <input type="text" name="pesquisa" id="" placeholder="Digite o quiser pesquisar" >
+                    <button>Buscar</button>
+    </form>
+    <form action="/baixar" method="get">               
+                    <button>Gerar relatório</button></a>
+    </form>
+    <form action="/inicio" method="get">              
+                    <button>Retornar para o site</button></a>
+    </form>                
+                </div>
+            </div>
+            <table class="tabela">
+                
+                <tr>
+                    <th class="tabela-linhas">OSº N</th>
+                    <th class="tabela-linhas">VIATURA</th>
+                    <th class="tabela-linhas">DATA</th>
+                    <th class="tabela-linhas">OFICINA</th>
+                    <th class="tabela-linhas">VALOR</th>
+                    <th class="tabela-linhas">STATUS</th>
+                    <th class="tabela-linhas">AÇÕES</th>
+                </tr>
+                {{#relatorios}}
+                    <tr>
+                        <td class="tabela-linhas2">{{os}}</td>
+                        <td class="tabela-linhas2">{{vtr}}</td>
+                        <td class="tabela-linhas2">{{data}}</td>
+                        <td class="tabela-linhas2">{{oficina}}</td>
+                        <td class="tabela-linhas2">{{valor}}</td>
+                        <td class="tabela-linhas2">{{status}}</td>
+                        <td class="tabela-linhas2">
+                            <a class="link-itens-a" href="/pagar/{{os}}">Pagar</a>
+                            <a class="link-itens-a" href="pagar">Visualizar</a>
+                            <a class="link-itens-a" href="pagar">Baixar OS</a>
+                        </td>
+                    </tr>
+                {{/relatorios}}
+                
+            
+            </table>
+        </div>
+    
+    
+    
+</body>
+</html>

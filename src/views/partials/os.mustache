@@ -1,0 +1,57 @@
+<form action="/newos" method="post">
+    <div class="addos-container">
+            <div class="itens-containes-os2">
+                <span class="txt-cadastrar-os">CADASTRAR ORDEM DE SERVIÇO</span>
+            </div>
+            <div class="itens-containes-os">
+                <span class="txt-menu-addcontainer">OS nº</span>
+                <input type="text" class="inputs-add-os" placeholder="Digite o nº da OS" name="oss">
+            </div>
+            <div class="itens-containes-os">
+                <span class="txt-menu-addcontainer">Data</span>
+                <input type="date" class="inputs-add-os" placeholder="Digite o nº da OS" name="data">
+            </div>
+            <div class="itens-containes-os">
+                <span class="txt-menu-addcontainer">Viatura</span>
+                <select type="text" class="inputs-add-os2" placeholder="Digite o nº da OS" name="vtr">
+                    {{#listavtrs}}
+                        <option value="{{prefixo}}">{{prefixo}}</option>
+                    {{/listavtrs}}
+                </select>
+            </div>
+            <div class="itens-containes-os">
+                <span class="txt-menu-addcontainer">Oficina</span>
+                <input type="text" class="inputs-add-os" placeholder="Digite o nº da OS" name="oficina">
+            </div>
+            <div class="itens-containes-os">
+                <span class="txt-menu-addcontainer">Status</span>
+                <select type="text" class="inputs-add-os2" placeholder="Digite o nº da OS" name="status">
+                    <option value="Aguardando pagamento">Aguardando pagamento</option>
+                    <option value="Pago">Pago</option>
+                </select>
+            </div>
+            <div class="itens-containes-os">
+                <span class="txt-menu-addcontainer">KM VTR</span>
+                <input type="txt" class="inputs-add-os" placeholder="Digite o KM da viatura" name="km">
+            </div>
+            <div class="itens-containes-os">
+                <span class="txt-menu-addcontainer">Condutor</span>
+                <select type="text" class="inputs-add-os2" placeholder="Digite o nº da OS" name="mot">
+                    {{#listapms}}
+                        <option value="{{grad}} {{qra}}">{{grad}} {{num}} {{qra}}</option>
+                    {{/listapms}}
+                </select>
+            </div>
+            <div class="itens-containes-os2222">
+                <span class="txt-menu-addcontainer">ITENS (/)</span>
+                <input type="txt" class="inputs-add-os2222" placeholder="Digite quais serviços foram feito separados por /" name="iten">
+            </div>
+            <div class="itens-containes-os2222">
+                <span class="txt-menu-addcontainer">Anexar OS</span>
+                <input type="file" class="inputs-add-os2222" placeholder="Digite quais serviços foram feito separados por /" name="docanexo">
+            </div>
+            <button type="submit" class="button-add-os-cav">Inserir OS</button>
+
+        </div>
+</form>        
+    

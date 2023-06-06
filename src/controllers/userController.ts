@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import User from '../models/Users';
 import Equips from '../models/Equips';
 import options from '../models/options';
+import Os from '../models/Os';
 
 
 
@@ -145,3 +146,24 @@ export const newequip = async (req: Request, res: Response) => {
 
         
 }}
+
+export const newos = async (req: Request, res: Response) => {
+    console.log(req.body)
+    let newOs = new Os();
+    newOs.os = req.body.oss
+    newOs.data = req.body.data
+    newOs.vtr = req.body.vtr
+    newOs.oficina = req.body.oficina
+    newOs.status = req.body.status
+    newOs.km = req.body.km
+    newOs.condutor = req.body.mot
+
+    await newOs.save();
+
+
+        
+
+    res.redirect('/edit2')
+
+        
+}
