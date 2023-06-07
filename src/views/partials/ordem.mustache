@@ -45,6 +45,35 @@
             <span class="txt-menu-addcontainer">VALOR</span>
             <div type="text" class="div-add-os">{{valor}} R$</div>
         </div>
+        <a class="link-itens-a" href="/baixar/{{os}}">
+            <button class='botao-confirmar-pagamento'> Baixar Ordem de Serviço </button>
+        </a>
+        <a class="link-itens-a" href="/pagar/{{os}}">
+            <button class='botao-confirmar-pagamento'> Gerar Oficio de pagamento </button>
+        </a>
+        {{^oficio}}
+        <a class="link-itens-a" href="/pg/{{os}}">
+            <button class='botao-confirmar-pagamento'> Confirmar Pagamento </button>
+        </a>
+        {{/oficio}}
+        {{#menu.pagar}}
+        <br>
+        <div> 
+            <form action="/confirmar/{{os}}" method="post">
+            <div class="itens-containes-os2222">
+                <span class="txt-menu-addcontainer">Nº Oficio</span>
+                <input type="txt" class="inputs-add-os2222" placeholder="Digite o numero do oficio" name="oficio">
+            </div>
+            <div class="itens-containes-os2222">
+                <span class="txt-menu-addcontainer">Data do pagamento</span>
+                <input type="date" class="inputs-add-os2222"  name="dpagamento">
+            </div>
+            
+            <button type="submit" class="button-add-os-cav">PAGAR</button>
+            </form>
+            
+        </div>
+        {{/menu.pagar}}
 
     </div>
     

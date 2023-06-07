@@ -1,5 +1,31 @@
 OS,Data,VTR,Oficina,Valor,Itens,Status
+12345,2023-06-08,CAV 12,PRIME,"10.000,00","Troca dos amortecedores,troca das pastilhas de freio,troca do óleo",Aguardando pagamento
+0806,2023-06-07,CAV 12,DKOFICE,,"Troca dos amortecedores,troca das pastilhas de freio,troca do óleo",Pago
+1994,2023-06-07,CAV 11,PRIME,"9.000,00","Troca de óleo,Troca dos pneus",Pago
+3243,2023-06-07,CAV 12,PRIME,"5.000,00","Troca dos amortecedores,troca das pastilhas de freio,troca do óleo",Aguardando pagamento
+1234567,2023-06-07,CAV 12,PRIME,"5.000,00","Troca dos amortecedores,troca das pastilhas de freio,troca do óleo",Aguardando pagamento
+2023,2023-06-06,CAV 11,OFICINA LEGAL,,"Troca do óleo da viatura, troca dos pneus, troca da correa dentada",Aguardando pagamento
+2022,2023-06-06,RPM 05,MUSTACHE,,"Troca do óleo, troca da correa dentada,10.000,00",Aguardando pagamento
+2021,2023-06-06,CAV 12,OFICINA LEGAL,"5.000,00","Troca do óleo da viatura, troca dos pneus, troca da correa dentada",Pago
+2025,2023-06-06,CAV 11,DKOFICE,10.000,,Aguardando pagamento
+4243,2023-05-30,CAV 13,PRIME,"5.000,00",Troca do óleo do motor,Aguardando pagamento
+4243,2023-05-30,CAV 13,PRIME,,,Aguardando pagamento
+243452,2023-02-02,RPM 06,PRIME,,,Pago
 124214,2023-02-01,CAV 12,PRIME,,,Aguardando pagamento
-2021,2023-06-06,CAV 12,OFICINA LEGAL,"5.000,00","Troca do óleo da viatura, troca dos pneus, troca da correa dentada",Aguardando pagamento
+235325,2023-01-02,CAV 13,LOJA MAIS,,,Aguardando pagamento
+41234234,0014-12-04,CAV 13,PRIME,,,Aguardando pagamento
+124214,,RPM 06,CENTER,,,Pago
+,,CAV 11,,,,Aguardando pagamento
+,,CAV 11,,,,Aguardando pagamento
+,,CAV 11,,,,Aguardando pagamento
+,,CAV 11,,,,Aguardando pagamento
+123124,,CAV 11,,,,Aguardando pagamento
+testeos,,CAV 11,,,,Aguardando pagamento
+,,CAV 11,,,,Aguardando pagamento
+34t34t4,,CAV 11,,,,Aguardando pagamento
 ,,CAV 12,,,"Troca dos amortecedores, troca das pastilhas de freio, troca do óleo",Aguardando pagamento
-0806,2023-06-07,CAV 12,DKOFICE,,"Troca dos amortecedores,troca das pastilhas de freio,troca do óleo",Aguardando pagamento
+,,CAV 12,,,,Aguardando pagamento
+teste,,CAV 12,,,,Aguardando pagamento
+teste,,CAV 12,,,,Aguardando pagamento
+teste,,CAV 12,,,,Aguardando pagamento
+3243,,CAV 12,,,,Aguardando pagamento

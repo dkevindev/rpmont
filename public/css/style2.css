@@ -1065,10 +1065,19 @@
     height: auto;    
 }
 
+.botao-confirmar-pagamento {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 .lista-add-os {
     margin: 2px;
     min-height: 300px;
     height: auto;
+}
+
+.lista-add-os button {
+    width: 100%;
 }
 
 .item-li-2 {

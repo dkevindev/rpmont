@@ -3,6 +3,8 @@ import User from '../models/Users';
 import Equips from '../models/Equips';
 import options from '../models/options';
 import Os from '../models/Os';
+import path from 'path'
+import fs from 'fs'
 
 
 
@@ -156,6 +158,7 @@ export const newos = async (req: Request, res: Response) => {
     newOs.status = req.body.status
     newOs.km = req.body.km
     newOs.condutor = req.body.mot
+    newOs.frota = req.body.frota
     
 
     console.log(req.body.iten)
@@ -166,8 +169,27 @@ export const newos = async (req: Request, res: Response) => {
     newOs.valor = req.body.valor
 
     newOs.save()
+    
+    const file:any = req.file;
 
-    res.redirect('/edit2')
+    const newFileName = `${req.body.oss}.pdf`;
+    const newPath = path.join('./public/documentos', newFileName);
+
+    fs.rename(file.path, newPath, (err) => {
+    if (err) {
+        // Tratar o erro, se necessário
+        console.error(err);
+        return res.status(500).send('Erro ao renomear o arquivo.');
+    }
+
+    // O arquivo foi renomeado com sucesso
+    // Faça qualquer outra operação necessária aqui
+    // ...
+    // Envie uma resposta apenas quando todas as operações estiverem concluídas
+    res.redirect('/home')
+    });
+
+    
 
         
 }

@@ -232,7 +232,7 @@ export const buscasos = async(req: Request, res: Response)=>{
   let relatorios;
   
   if (!texto && !data) {
-    relatorios = await Os.find(filtroMes)
+    relatorios = await Os.find(filtroMes).sort({ data: -1 })
   }
   
   if (!data && !mes) {
@@ -245,7 +245,7 @@ export const buscasos = async(req: Request, res: Response)=>{
         { itens: { $regex: new RegExp(texto, 'i') } },
 
       ]
-    });
+    }).sort({ data: -1 });
   }
 
   if (!texto && !mes) {
@@ -254,7 +254,7 @@ export const buscasos = async(req: Request, res: Response)=>{
         { data: { $regex: new RegExp(data, 'i') } }
 
       ]
-    });
+    }).sort({ data: -1 });
   }
 
   if (data && texto && !mes) {
@@ -271,7 +271,7 @@ export const buscasos = async(req: Request, res: Response)=>{
         },
         { data: { $regex: new RegExp(data, 'i') } },
       ]
-    });
+    }).sort({ data: -1 });
   }
 
   if (mes && texto && !data) {
@@ -288,7 +288,7 @@ export const buscasos = async(req: Request, res: Response)=>{
         },
         { data: { $regex: `^${mes}` } },
       ]
-    });
+    }).sort({ data: -1 });
   }
 
   if (vtr && texto) {
@@ -305,7 +305,7 @@ export const buscasos = async(req: Request, res: Response)=>{
         },
         { vtr: { $regex: new RegExp(vtr) } },
       ]
-    });
+    }).sort({ data: -1 });
   }
 
   if (vtr && !texto && !mes) {
@@ -314,7 +314,7 @@ export const buscasos = async(req: Request, res: Response)=>{
         { vtr: { $regex: new RegExp(vtr) } }
 
       ]
-    });
+    }).sort({ data: -1 });
   }
 
   if (vtr && mes) {
@@ -327,7 +327,7 @@ export const buscasos = async(req: Request, res: Response)=>{
         },
         { data: { $regex: `^${mes}` } },
       ]
-    });
+    }).sort({ data: -1 });
   }
 
   if (vtr && data && !mes && !texto) {
@@ -343,7 +343,7 @@ export const buscasos = async(req: Request, res: Response)=>{
         },
         { data: { $regex: `^${mes}` } },
       ]
-    });
+    }).sort({ data: -1 });
   }
 
   
@@ -420,6 +420,16 @@ export const pagar = async(req: Request, res: Response)=>{
   const fs = require('fs');
   const Docxtemplater = require('docxtemplater');
   const JSZip = require('jszip');
+
+  const { format } = require('date-fns');
+  const { ptBR } = require('date-fns/locale');
+
+  
+  const dataAtual = new Date();
+  const formatoData = "dd 'de' MMMM 'de' yyyy";
+  const dataFormatada = format(dataAtual, formatoData, { locale: ptBR });
+
+  
   
   // Leitura do arquivo
   const content = fs.readFileSync('modelo.docx', 'binary');
@@ -435,7 +445,8 @@ export const pagar = async(req: Request, res: Response)=>{
     valor: os2[0].valor,
     modelo: vtrs.modelo,
     placa: vtrs.placa,
-    itens: os2[0].itens
+    itens: os2[0].itens,
+    data: dataFormatada
   };
   
   // Opções de configuração da biblioteca
@@ -472,5 +483,55 @@ export const pagar = async(req: Request, res: Response)=>{
 
 
 
+};
+
+export const pg = async(req: Request, res: Response)=>{
+  const os = req.params.os
+  const ordem = await Os.findOne({os: os})
+ 
+
+  
+ 
+  
+  
+  
+  res.render('pages/inicio', {
+      menu: {
+          ordens: true,
+          title: 'ORDEN DE SERVIÇO',
+          pagar: true
+      },
+      ordem
+      
+  });
+};
+
+export const confirmar = async(req: Request, res: Response)=>{
+  const os = req.params.os
+  const ordem:any = await Os.findOne({os: os})
+  await Os.updateOne(
+    { os: os },
+    {
+      $set: {
+        oficio: req.body.oficio,
+        dpagamento: req.body.dpagamento,
+        status: 'Pago'
+      }
+    }
+  );
+
+  console.log(ordem)
+
+  
+  
+  res.render('pages/inicio', {
+      menu: {
+          ordens: true,
+          title: 'ORDEN DE SERVIÇO',
+          pagar: true
+      },
+      ordem
+      
+  });
 };
 
