@@ -29,7 +29,8 @@ type VtrsType = {
         pneud: String,
         pneut: String,
         arcondicionado: Boolean
-    }
+    },
+    ano: String
     
 };
 
@@ -62,7 +63,8 @@ const schema = new Schema<VtrsType>({
         pneud: {type: String, required: false},
         pneut: {type: String, required: false},
         arcondicionado: {type: Boolean, required: false}
-    }
+    },
+    ano: {type: String, required: false},
 });
 
 const modelName: string = 'vtrs';

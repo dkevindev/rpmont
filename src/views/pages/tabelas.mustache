@@ -19,6 +19,12 @@
                     <input type="date" name="data">
                     <input type="month" name="mes">
                     <input type="text" name="pesquisa" id="" placeholder="Digite o quiser pesquisar" >
+                    <select type="text" class="inputs-add-os2" placeholder="Digite o nº da OS" name="prefixo">
+                        <option value="">ESCOLHER VIATURA</option>
+                    {{#lista_vtrs}}
+                        <option value="{{prefixo}}">{{prefixo}}</option>
+                    {{/lista_vtrs}}
+                </select>
                     <button>Buscar</button>
     </form>
     <form action="/baixar" method="get">               
@@ -50,8 +56,8 @@
                         <td class="tabela-linhas2">{{status}}</td>
                         <td class="tabela-linhas2">
                             <a class="link-itens-a" href="/pagar/{{os}}">Pagar</a>
-                            <a class="link-itens-a" href="pagar">Visualizar</a>
-                            <a class="link-itens-a" href="pagar">Baixar OS</a>
+                            <a class="link-itens-a" href="/exibir/{{os}}">Visualizar</a>
+                            <a class="link-itens-a" href="/baixar/{{os}}">Baixar OS</a>
                         </td>
                     </tr>
                 {{/relatorios}}

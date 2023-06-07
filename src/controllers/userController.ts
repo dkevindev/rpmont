@@ -148,7 +148,6 @@ export const newequip = async (req: Request, res: Response) => {
 }}
 
 export const newos = async (req: Request, res: Response) => {
-    console.log(req.body)
     let newOs = new Os();
     newOs.os = req.body.oss
     newOs.data = req.body.data
@@ -157,11 +156,16 @@ export const newos = async (req: Request, res: Response) => {
     newOs.status = req.body.status
     newOs.km = req.body.km
     newOs.condutor = req.body.mot
+    
 
-    await newOs.save();
+    console.log(req.body.iten)
+    const itens = req.body.iten
+    const itens2:string[] = itens.split(",").map((item:string) => item.trim());
+    
+    newOs.itens = itens2
+    newOs.valor = req.body.valor
 
-
-        
+    newOs.save()
 
     res.redirect('/edit2')
 

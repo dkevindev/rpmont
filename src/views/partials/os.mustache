@@ -1,4 +1,4 @@
-<form action="/newos" method="post">
+<form action="/newos" method="post" enctype="multipart/form-data">
     <div class="addos-container">
             <div class="itens-containes-os2">
                 <span class="txt-cadastrar-os">CADASTRAR ORDEM DE SERVIÇO</span>
@@ -21,7 +21,7 @@
             </div>
             <div class="itens-containes-os">
                 <span class="txt-menu-addcontainer">Oficina</span>
-                <input type="text" class="inputs-add-os" placeholder="Digite o nº da OS" name="oficina">
+                <input type="text" class="inputs-add-os" placeholder="Digite nome da oficina" name="oficina">
             </div>
             <div class="itens-containes-os">
                 <span class="txt-menu-addcontainer">Status</span>
@@ -43,12 +43,16 @@
                 </select>
             </div>
             <div class="itens-containes-os2222">
-                <span class="txt-menu-addcontainer">ITENS (/)</span>
-                <input type="txt" class="inputs-add-os2222" placeholder="Digite quais serviços foram feito separados por /" name="iten">
+                <span class="txt-menu-addcontainer">ITENS (,)</span>
+                <input type="txt" class="inputs-add-os2222" placeholder="Digite quais serviços foram feito separados por vírgula" name="iten">
             </div>
             <div class="itens-containes-os2222">
                 <span class="txt-menu-addcontainer">Anexar OS</span>
-                <input type="file" class="inputs-add-os2222" placeholder="Digite quais serviços foram feito separados por /" name="docanexo">
+                <input type="file" class="inputs-add-os2222" name="docanexo">
+            </div>
+            <div class="itens-containes-os2222">
+                <span class="txt-menu-addcontainer">VALOR R$</span>
+                <input type="txt" class="inputs-add-os2222" placeholder="Digite o valor da nota fiscal" name="valor">
             </div>
             <button type="submit" class="button-add-os-cav">Inserir OS</button>
 

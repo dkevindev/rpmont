@@ -133,7 +133,8 @@ export const buscarpm = async(req: Request, res: Response)=>{
 export const oss = async(req: Request, res: Response)=>{
   const prefixo = req.params.prefixo
   const osss = await Os.findOne({vtr: prefixo})
-  const os2 = await Os.find({vtr: prefixo})
+  const os2 = await Os.find({vtr: prefixo}).sort({ data: -1 }).limit(8)
+  const viatura = await Vtrs.findOne({prefixo})
   
 
   
@@ -143,7 +144,8 @@ export const oss = async(req: Request, res: Response)=>{
           title: 'ORDENS DE SERVIÇO',
       },
       osss,
-      os2
+      os2,
+      viatura
       
   });
 };
@@ -151,8 +153,12 @@ export const oss = async(req: Request, res: Response)=>{
 export const exibir = async(req: Request, res: Response)=>{
   const os = req.params.os
   const ordem = await Os.findOne({os: os})
+ 
+
   
-  console.log(ordem)
+ 
+  
+  
   
   res.render('pages/inicio', {
       menu: {
@@ -171,6 +177,8 @@ export const relatorios = async(req: Request, res: Response)=>{
   
   
   
+  
+  
   res.render('pages/inicio', {
       menu: {
           relatorios: true,
@@ -182,6 +190,7 @@ export const relatorios = async(req: Request, res: Response)=>{
 
 export const tabelas = async(req: Request, res: Response)=>{
   const os = req.params.os
+  let lista_vtrs = await Vtrs.find({}) 
   
   
  
@@ -192,18 +201,21 @@ export const tabelas = async(req: Request, res: Response)=>{
           relatorios: true,
           title: 'RELATÓRIOS SERVIÇO',
       },
+      lista_vtrs
       
       
   });
 };
 
 export const buscasos = async(req: Request, res: Response)=>{
+  let lista_vtrs = await Vtrs.find({})
   const path = require('path');
   const os = req.body
   console.log(os)
   const data = req.body.data
   const texto = req.body.pesquisa
   const mes = req.body.mes
+  const vtr = req.body.prefixo
   
   const filtroMes = {
     data: {
@@ -230,6 +242,7 @@ export const buscasos = async(req: Request, res: Response)=>{
         { status: { $regex: new RegExp(texto, 'i') } },
         { os: { $regex: new RegExp(texto, 'i') } },
         { vtr: { $regex: new RegExp(texto, 'i') } },
+        { itens: { $regex: new RegExp(texto, 'i') } },
 
       ]
     });
@@ -253,6 +266,7 @@ export const buscasos = async(req: Request, res: Response)=>{
             { status: { $regex: new RegExp(texto, 'i') } },
             { os: { $regex: new RegExp(texto, 'i') } },
             { vtr: { $regex: new RegExp(texto, 'i') } },
+            { itens: { $regex: new RegExp(texto, 'i') } },
           ]
         },
         { data: { $regex: new RegExp(data, 'i') } },
@@ -269,12 +283,70 @@ export const buscasos = async(req: Request, res: Response)=>{
             { status: { $regex: new RegExp(texto, 'i') } },
             { os: { $regex: new RegExp(texto, 'i') } },
             { vtr: { $regex: new RegExp(texto, 'i') } },
+            { itens: { $regex: new RegExp(texto, 'i') } },
           ]
         },
         { data: { $regex: `^${mes}` } },
       ]
     });
   }
+
+  if (vtr && texto) {
+    relatorios = await Os.find({
+      $and: [
+        {
+          $or: [
+            { oficina: { $regex: new RegExp(texto, 'i') } },
+            { status: { $regex: new RegExp(texto, 'i') } },
+            { os: { $regex: new RegExp(texto, 'i') } },
+            { itens: { $regex: new RegExp(texto, 'i') } },
+            { itens: { $regex: new RegExp(texto, 'i') } },
+          ]
+        },
+        { vtr: { $regex: new RegExp(vtr) } },
+      ]
+    });
+  }
+
+  if (vtr && !texto && !mes) {
+    relatorios = await Os.find({
+      $or: [
+        { vtr: { $regex: new RegExp(vtr) } }
+
+      ]
+    });
+  }
+
+  if (vtr && mes) {
+    relatorios = await Os.find({
+      $and: [
+        {
+          $or: [
+            { vtr: { $regex: new RegExp(vtr) } }
+          ]
+        },
+        { data: { $regex: `^${mes}` } },
+      ]
+    });
+  }
+
+  if (vtr && data && !mes && !texto) {
+    relatorios = await Os.find({
+      $and: [
+        {
+          $or: [
+            { oficina: { $regex: new RegExp(texto, 'i') } },
+            { status: { $regex: new RegExp(texto, 'i') } },
+            { os: { $regex: new RegExp(texto, 'i') } },
+            { itens: { $regex: new RegExp(texto, 'i') } },
+          ]
+        },
+        { data: { $regex: `^${mes}` } },
+      ]
+    });
+  }
+
+  
   
   
   
@@ -299,6 +371,8 @@ export const buscasos = async(req: Request, res: Response)=>{
       { id: 'data', title: 'Data' },
       { id: 'vtr', title: 'VTR' },
       { id: 'oficina', title: 'Oficina' },
+      { id: 'valor', title: 'Valor' },
+      { id: 'itens', title: 'Itens' },
       { id: 'status', title: 'Status' },
     ],
   });
@@ -313,7 +387,7 @@ export const buscasos = async(req: Request, res: Response)=>{
       console.error('Erro ao exportar dados para o arquivo CSV:', error);
     });
 
-
+    console.log(relatorios)
 
 
 
@@ -328,8 +402,8 @@ export const buscasos = async(req: Request, res: Response)=>{
           relatorios: true,
           title: 'RELATÓRIOS SERVIÇO',
       },
-      relatorios
-      
+      relatorios,
+      lista_vtrs
       
   });
 };

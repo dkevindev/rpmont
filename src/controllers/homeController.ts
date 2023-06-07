@@ -108,8 +108,8 @@ export const vtrs = async(req: Request, res: Response)=>{
             title: 'ACOMPANHAMENTO DE VIATURAS',
             title2: 'prefixo da VTR',
             vtrop: true,
-            vtrs2
-        }
+        },
+        vtrs2
         
         
     });
@@ -261,4 +261,32 @@ export const baixar = async(req: Request, res: Response)=>{
         
         
     });
+
+    
+};
+
+export const baixaros = async(req: Request, res: Response)=>{
+    const fs = require('fs');
+    const path = require('path');
+    const filePath = path.join(__dirname, '../../public/documentos', `${req.params.os}.pdf`);
+
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
+
+
+  // Define o cabeçalho do Content-Disposition para forçar o download do arquivo
+    res.setHeader('Content-disposition', 'attachment; filename=relatorio.pdf');
+    res.setHeader('Content-type', 'application/pdf');
+
+  // Faz a leitura do arquivo CSV e envia o conteúdo para o cliente
+    
+
+  // Faz o pipe da stream para a resposta
+  const fileStream = fs.createReadStream(filePath);
+  fileStream.pipe(res);
+                
+
+
+
+    
+
 };

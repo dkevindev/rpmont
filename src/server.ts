@@ -4,8 +4,11 @@ import mustache from 'mustache-express';
 import dotenv from 'dotenv';
 import mainRoutes from './routes/index';
 import {mongoConnect} from './database/mongo'
+import multer from 'multer'
 
 dotenv.config();
+
+const upload = multer({ dest: 'uploads/' })
 
 mongoConnect();
 

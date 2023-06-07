@@ -1,6 +1,6 @@
 <div class="addos-container">
         <div class="itens-containes-os2">
-            <span class="txt-cadastrar-os">VIATURA CAV 13</span>
+            <span class="txt-cadastrar-os">VIATURA {{vtr}}</span>
         </div>
         <div class="itens-containes-os">
             <span class="txt-menu-addcontainer">OS nº</span>
@@ -37,16 +37,13 @@
             <div type="text" class="div-add-os222">
                 
                 <ul class="lista-add-os">
-                    <li class="item-li-2">troca de oleo</li>
-                    <li class="item-li-2">troca de oleo</li>
-                    <li class="item-li-2">troca de oleo</li>
-                    <li class="item-li-2">troca de oleo</li>
+                    {{#itens}}<li class="item-li-2">{{.}}</li>{{/itens}}
                 </ul>
             </div>
         </div>
         <div class="itens-containes-os666">
             <span class="txt-menu-addcontainer">VALOR</span>
-            <div type="text" class="div-add-os">15.OOO,00 R$</div>
+            <div type="text" class="div-add-os">{{valor}} R$</div>
         </div>
 
     </div>

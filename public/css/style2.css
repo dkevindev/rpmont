@@ -928,6 +928,18 @@
     margin: 20px;
 }
 
+.addos-container2 {
+    background-color: #414942;
+    width: 600px;
+    height: 500px;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    margin: 20px;
+}
+
 .itens-containes-os2{
     display: flex;
     flex: line;

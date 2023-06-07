@@ -1,42 +1,37 @@
-<div class="addos-container">
+<div class="addos-container2">
         <div class="itens-containes-os2">
-            <span class="txt-cadastrar-os">VIATURA CAV 13</span>
+            <span class="txt-cadastrar-os">VIATURA {{viatura.prefixo}}</span>
         </div>
         <div class="itens-containes-os">
             <span class="txt-menu-addcontainer">VTR</span>
-            <div type="text" class="div-add-os">CAV 13</div>
+            <div type="text" class="div-add-os">{{viatura.prefixo}}</div>
         </div>
         <div class="itens-containes-os">
             <span class="txt-menu-addcontainer">MODELO</span>
-            <div type="text" class="div-add-os">TRAILBLAZER</div>
+            <div type="text" class="div-add-os">{{viatura.modelo}}</div>
         </div>
         <div class="itens-containes-os">
             <span class="txt-menu-addcontainer">ANO</span>
-            <div type="text" class="div-add-os">2022</div>
+            <div type="text" class="div-add-os">{{viatura.ano}}</div>
         </div>
         <div class="itens-containes-os">
             <span class="txt-menu-addcontainer">KM</span>
-            <div type="text" class="div-add-os">245.222</div>
+            <div type="text" class="div-add-os">{{viatura.km}}</div>
         </div>
         <div class="itens-containes-os2">
-            <span class="txt-cadastrar-os">ORDENS DE SERVIÇO</span>
+            <span class="txt-cadastrar-os">ÚLTIMAS 8 ORDENS DE SERVIÇO</span>
         </div>
         <div class="itens-containes-os777">
             <div type="text" class="div-add-os222">
                 <ul class="lista-add-os">
                     {{#os2}}
-                        <form action="/{{os}}/exibir" method="get">
-                            <button type="submit" class="botan-listas-xxx">
-                                <li class="item-li-2">0S Nº {{os}} / VALOR: {{valor}} / OFICINA: {{oficina}} / STATUS: {{status}} /DATA: {{data}}</li>
-                            </button
-                        </form>
+                    <a class="link-itens-a" href="/exibir/{{os}}">
+                    <button><li class="item-li-2"><strong>OS Nº  </strong>{{os}} /<strong> VALOR: </strong>{{valor}} / <strong>OFICINA:</strong> {{oficina}} /<strong> DATA</strong>: {{data}} /<strong> STATUS: </strong>{{status}}</li></button>
+                    </a>
                     {{/os2}}
                 </ul>
             </div>
         </div>
-        <div class="itens-containes-os666">
-            <span class="txt-menu-addcontainer">VALOR</span>
-            <div type="text" class="div-add-os">15.OOO,00 R$</div>
-        </div>
+
 
     </div>

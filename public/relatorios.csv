@@ -1,8 +1,5 @@
-OS,Data,VTR,Oficina,Status
-4243,2023-05-30,CAV 13,PRIME,Aguardando pagamento
-4243,2023-05-30,CAV 13,PRIME,Aguardando pagamento
-41234234,0014-12-04,CAV 13,PRIME,Aguardando pagamento
-243452,2023-02-02,RPM 06,PRIME,Pago
-124214,,RPM 06,CENTER,Pago
-235325,2023-01-02,CAV 13,LOJA MAIS,Aguardando pagamento
-124214,2023-02-01,CAV 12,PRIME,Aguardando pagamento
+OS,Data,VTR,Oficina,Valor,Itens,Status
+124214,2023-02-01,CAV 12,PRIME,,,Aguardando pagamento
+2021,2023-06-06,CAV 12,OFICINA LEGAL,"5.000,00","Troca do óleo da viatura, troca dos pneus, troca da correa dentada",Aguardando pagamento
+,,CAV 12,,,"Troca dos amortecedores, troca das pastilhas de freio, troca do óleo",Aguardando pagamento
+0806,2023-06-07,CAV 12,DKOFICE,,"Troca dos amortecedores,troca das pastilhas de freio,troca do óleo",Aguardando pagamento

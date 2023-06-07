@@ -9,8 +9,7 @@ type OsType = {
     km: string,
     condutor: string,
     valor: string,
-    itens: [string],
-    oficio: string
+    itens: string[],
 };
 
 const schema = new Schema<OsType>({
@@ -23,7 +22,6 @@ const schema = new Schema<OsType>({
     km: {type: String, required: false},
     valor: {type: String, required: false},
     itens: {type: [String], required: false},
-    oficio: {type: String, required: false}
 });
 
 const modelName: string = 'os';
